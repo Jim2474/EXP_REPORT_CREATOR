@@ -1,0 +1,103 @@
+MATLAB Experiment 4: SIMULINK 仿真 (命令行方式)
+Run time:
+   2026-05-31 15:37:00
+===== Exercise 4-1 =====
+使用 SIMULINK 仿真 T1, T2, T3 系统的阶跃响应
+运行 SIMULINK 仿真...
+图形已保存：exercise_4_1_simulink.png
+===== Exercise 4-2-① =====
+使用 SIMULINK 仿真 sigma=0.5,1,5 的阶跃响应
+{错误使用 experiment4_simulink_run (第 134 行)
+Simulink 对象名称无效: '/G_1/1'。
+出错 run (第 112 行)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ - 显示完整堆栈跟踪} 
+[警告: 无法关闭模型 'exp4_2_sigma'，因为它已更改。要保存更改，请使用 close_system('exp4_2_sigma',1)。要放弃更改，请使用 close_system('exp4_2_sigma',0)。] 
+MATLAB Experiment 4: SIMULINK 仿真 (命令行方式)
+Run time:
+   2026-05-31 15:39:31
+===== Exercise 4-1 =====
+使用 SIMULINK 仿真 T1, T2, T3 系统的阶跃响应
+运行 SIMULINK 仿真...
+图形已保存：exercise_4_1_simulink.png
+===== Exercise 4-2-① =====
+使用 SIMULINK 仿真 sigma=0.5,1,5 的阶跃响应
+sigma=0.5: wn=1.1180, zeta=0.4472, G(s)=1.2500/(s^2+1.0000s+1.2500)
+sigma=1.0: wn=1.4142, zeta=0.7071, G(s)=2.0000/(s^2+2.0000s+2.0000)
+sigma=5.0: wn=5.0990, zeta=0.9806, G(s)=26.0000/(s^2+10.0000s+26.0000)
+运行 SIMULINK 仿真...
+图形已保存：exercise_4_2_1_simulink.png
+===== Exercise 4-2-② =====
+使用 SIMULINK 仿真 theta=30,45,60度的阶跃响应
+theta=30°: zeta=0.8660, G(s)=4.0000/(s^2+3.4641s+4.0000)
+theta=45°: zeta=0.7071, G(s)=4.0000/(s^2+2.8284s+4.0000)
+theta=60°: zeta=0.5000, G(s)=4.0000/(s^2+2.0000s+4.0000)
+运行 SIMULINK 仿真...
+图形已保存：exercise_4_2_2_simulink.png
+===== Exercise 4-3 =====
+使用 SIMULINK 仿真非最小相位系统
+运行 SIMULINK 仿真...
+图形已保存：exercise_4_3_2_simulink.png
+图形已保存：exercise_4_3_3_simulink.png
+--- 4-3-④: 结果汇总 ---
+右平面零点 n(s)=(-s+a)/a:
+  a=1: 超调量=20.98%, 峰值时间=4.2362 s, 稳态值=0.9991
+  a=3: 超调量=17.12%, 峰值时间=3.9062 s, 稳态值=0.9993
+  a=6: 超调量=16.59%, 峰值时间=3.7762 s, 稳态值=0.9993
+左平面零点 n(s)=(s+a)/a:
+  a=1: 超调量=29.89%, 峰值时间=2.4162 s, 稳态值=0.9996
+  a=3: 超调量=17.50%, 峰值时间=3.2462 s, 稳态值=0.9995
+  a=6: 超调量=16.63%, 峰值时间=3.4462 s, 稳态值=0.9994
+===== 所有仿真完成 =====
+MATLAB Experiment 4: SIMULINK 仿真 (命令行方式)
+Run time:
+   2026-05-31 15:48:22
+===== Exercise 4-1 =====
+使用 SIMULINK 仿真 T1, T2, T3 系统的阶跃响应
+[警告: The model name 'exp4_step' is shadowing another name in the MATLAB workspace or path. Type "which -all exp4_step" at the command line to find the other uses of this name.
+You should change the name of the model to avoid problems.] 
+[> 位置：experiment4_simulink_run (第 25 行)
+位置: run (第 112 行)] 
+运行 SIMULINK 仿真...
+图形已保存：exercise_4_1_simulink.png
+===== Exercise 4-2-① =====
+使用 SIMULINK 仿真 sigma=0.5,1,5 的阶跃响应
+[警告: The model name 'exp4_sigma' is shadowing another name in the MATLAB workspace or path. Type "which -all exp4_sigma" at the command line to find the other uses of
+this name. You should change the name of the model to avoid problems.] 
+[> 位置：experiment4_simulink_run (第 116 行)
+位置: run (第 112 行)] 
+sigma=0.5: wn=1.1180, zeta=0.4472, G(s)=1.2500/(s^2+1.0000s+1.2500)
+sigma=1.0: wn=1.4142, zeta=0.7071, G(s)=2.0000/(s^2+2.0000s+2.0000)
+sigma=5.0: wn=5.0990, zeta=0.9806, G(s)=26.0000/(s^2+10.0000s+26.0000)
+运行 SIMULINK 仿真...
+图形已保存：exercise_4_2_1_simulink.png
+===== Exercise 4-2-② =====
+使用 SIMULINK 仿真 theta=30,45,60度的阶跃响应
+[警告: The model name 'exp4_theta' is shadowing another name in the MATLAB workspace or path. Type "which -all exp4_theta" at the command line to find the other uses of
+this name. You should change the name of the model to avoid problems.] 
+[> 位置：experiment4_simulink_run (第 187 行)
+位置: run (第 112 行)] 
+theta=30°: zeta=0.8660, G(s)=4.0000/(s^2+3.4641s+4.0000)
+theta=45°: zeta=0.7071, G(s)=4.0000/(s^2+2.8284s+4.0000)
+theta=60°: zeta=0.5000, G(s)=4.0000/(s^2+2.0000s+4.0000)
+运行 SIMULINK 仿真...
+图形已保存：exercise_4_2_2_simulink.png
+===== Exercise 4-3 =====
+使用 SIMULINK 仿真非最小相位系统
+[警告: The model name 'exp4_nonmin' is shadowing another name in the MATLAB workspace or path. Type "which -all exp4_nonmin" at the command line to find the other uses
+of this name. You should change the name of the model to avoid problems.] 
+[> 位置：experiment4_simulink_run (第 254 行)
+位置: run (第 112 行)] 
+运行 SIMULINK 仿真...
+图形已保存：exercise_4_3_2_simulink.png
+图形已保存：exercise_4_3_3_simulink.png
+--- 4-3-④: 结果汇总 ---
+右平面零点 n(s)=(-s+a)/a:
+  a=1: 超调量=20.98%, 峰值时间=4.2362 s, 稳态值=0.9991
+  a=3: 超调量=17.12%, 峰值时间=3.9062 s, 稳态值=0.9993
+  a=6: 超调量=16.59%, 峰值时间=3.7762 s, 稳态值=0.9993
+左平面零点 n(s)=(s+a)/a:
+  a=1: 超调量=29.89%, 峰值时间=2.4162 s, 稳态值=0.9996
+  a=3: 超调量=17.50%, 峰值时间=3.2462 s, 稳态值=0.9995
+  a=6: 超调量=16.63%, 峰值时间=3.4462 s, 稳态值=0.9994
+===== 所有仿真完成 =====

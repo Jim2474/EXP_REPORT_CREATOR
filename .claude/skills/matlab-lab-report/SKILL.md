@@ -45,6 +45,54 @@ Use this skill to generate a complete MATLAB experiment report from an experimen
    - result analysis
    - summary
 
+## SIMULINK Workflow (for experiments using SIMULINK)
+
+For experiments that require SIMULINK, use MATLAB command-line API to programmatically create and run SIMULINK models:
+
+### Key Commands
+- `new_system(name)` — Create a new SIMULINK model
+- `add_block('lib/path', 'model/name', 'Position', [...])` — Add block with position
+- `add_line(model, 'src/1', 'dst/1', 'autorouting', 'on')` — Connect blocks with auto-routing
+- `set_param('model/block', 'Param', 'Value')` — Set block parameters
+- `sim(model)` — Run simulation
+- `save_system(model, path)` — Save as .slx file
+
+### Block Libraries
+| Block | Library Path |
+|-------|--------------|
+| Step | `simulink/Sources/Step` |
+| Transfer Fcn | `simulink/Continuous/Transfer Fcn` |
+| Mux | `simulink/Signal Routing/Mux` |
+| Scope | `simulink/Sinks/Scope` |
+| To Workspace | `simulink/Sinks/To Workspace` |
+
+### Layout Best Practices
+- Use `Position` parameter `[x1, y1, x2, y2]` to place blocks整齐
+- Use `'autorouting', 'on'` in `add_line` for clean wire routing
+- Space blocks 150-200px apart horizontally
+- Space parallel blocks 80-100px apart vertically
+
+### Example: Creating a SIMULINK Model
+```matlab
+modelName = 'my_model';
+new_system(modelName);
+
+% Add blocks with positions
+add_block('simulink/Sources/Step', [modelName '/Step'], ...
+    'Position', [50, 150, 150, 190]);
+add_block('simulink/Continuous/Transfer Fcn', [modelName '/G'], ...
+    'Position', [300, 150, 450, 190]);
+set_param([modelName '/G'], 'Numerator', '[1]', 'Denominator', '[1 2 1]');
+
+% Connect with auto-routing
+add_line(modelName, 'Step/1', 'G/1', 'autorouting', 'on');
+
+% Run and save
+simOut = sim(modelName);
+save_system(modelName, fullfile(outDir, [modelName '.slx']));
+close_system(modelName, 0);
+```
+
 ## Report Rules
 
 - Always use A4 portrait pages unless the user explicitly asks otherwise.
@@ -54,6 +102,8 @@ Use this skill to generate a complete MATLAB experiment report from an experimen
 - Use MATLAB-generated plot images for curves.
 - Use rendered MATLAB-style output images for command-window results.
 - If the user worries about authenticity, add one real MATLAB window screenshot as supplemental evidence, but keep the main report using readable rendered images.
+- **NEVER** add sentences like "以下结果由MATLAB批处理实际运行得到" or any meta-comment about how results were generated. The report should read as if the student wrote it directly — no AI-generated boilerplate, no explanations of the toolchain.
+- Write in a natural student voice. Avoid generic filler sentences. Each paragraph should contain specific data, observations, or reasoning.
 
 ## Compatibility Notes
 
